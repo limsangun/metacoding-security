@@ -1,0 +1,39 @@
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      force-response: true
+      
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/security?autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=false&requireSSL=false&serverTimezone=Asia/Seoul&allowMultiQueries=true    
+    username: tkrnfldlekd
+    password: tkddns3348
+    
+#  autoconfigure:
+#    exclude:
+#    - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  jpa:
+    hibernate:
+      ddl-auto: update #create update none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    
+    
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 730816423848-12qgq2c512su38eht47oi5irhu3r8apj.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+            - email
+            - profile
